@@ -2,6 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'style-src': "'self' 'unsafe-inline'",
+      'connect-src': "'self'",
+    },
     modulePrefix: 'friend-ranch-client',
     environment: environment,
     baseURL: '/',
@@ -20,9 +26,10 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.apiRoot = "http://localhost:3000/api/v1/"
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }

@@ -1,0 +1,21 @@
+<h3>signnnnup</h3>
+{{outlet}}
+
+{{#if errors}}
+  <h4>oops we got sum errrs</h4>
+  {{errors}}
+{{/if}}
+
+<form>
+  <label for="email">Email address</label>
+  {{input id="email" type="text" value=email}}
+  <label for="name">Name</label>
+  {{input id="name" type="text" value=name}}
+  <label for="password">Password</label>
+  {{input id="password" type="text" value=password}}
+  <label for="password_confirmation">Confirm your password</label>
+  {{input id="password_confirmation" type="text" value=password_confirmation}}
+  <button type="button" {{action "createUser"}}>Join the ranch!</button>
+</form>
+
+<p>Already signed up? {{#link-to 'login'}}Log in{{/link-to}}</p>
