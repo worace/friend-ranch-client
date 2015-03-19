@@ -1,4 +1,12 @@
 <h3>login</h3>
 {{outlet}}
 
+<form>
+  <label for="email">Email address</label>
+  {{input id="email" type="text" value=email}}
+  <label for="password">Password</label>
+  {{input id="password" type="text" value=password}}
+  <button type="button" {{action "login"}}>Log in</button>
+</form>
+
 <p>New to the ranch? {{#link-to 'signup'}}Go sign up!{{/link-to}}</p>

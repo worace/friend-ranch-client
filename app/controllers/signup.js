@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    createUser: function(something) {
+    createUser: function() {
       var params = {
         email: this.get("email"),
         name: this.get("name"),
@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
   },
   success: function(user) {
     console.log("success, created user!: ", user);
-    this.transitionToRoute("user",user);
+    this.transitionToRoute("calendar");
   },
   error: function(response) {
     //console.log("error creating user:  ", JSON.parse(response.responseText).errors);

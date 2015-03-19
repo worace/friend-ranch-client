@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('session', {path: '/'});
   this.route('login', {path: '/login'});
   this.route('signup', {path: '/signup'});
+  this.route('calendar', {path: '/calendar'});
   this.route('user', {path: "/users/:user_id"});
 });
 
