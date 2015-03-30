@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     login: function() {
-      var email = this.get("email")
-      var password = this.get("password")
-      return this.loginWithEmailAndPW(email, password)
+      var email = this.get("email");
+      var password = this.get("password");
+      return this.loginWithEmailAndPW(email, password);
     }
   },
   loginUrl: "http://localhost:3000/api/v1/sessions",
@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
         success : function(data) {
           Ember.$.cookie("authToken", data.user.token);
           window.currentUser = this.store.createRecord("user", data.user);
-          this.transitionTo("calendar")
+          this.transitionTo("calendar");
         }.bind(this)
     });
   }
