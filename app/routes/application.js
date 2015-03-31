@@ -2,16 +2,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  setupController: function(controller, model) {
-    console.log("Application Controller SetupController: ", controller, model);
-    this._super(controller, model);
-    this.controllerFor('application').set('currentUser', model);
-    this.controllerFor('application').set('isLoggedIn', true);
-  },
   beforeModel: function() {
     if(this.authToken() === undefined) {
-      console.log("no token, go log in");
       this.transitionTo("login");
+    } else {
+      this.loginWithToken(this.authToken());
     }
   },
   authToken: function() {
@@ -31,9 +26,8 @@ export default Ember.Route.extend({
               console.log("loginWithToken Success, got user data: ", data.user);
               var user = this.store.createRecord("user", data.user);
               window.currentUser = user;
-              //console.log("controller woo", this.controllerFor("application"));
-              //this.controllerFor('application').set('currentUser', user);
-              //this.controllerFor('application').set('isLoggedIn', true);
+              this.controllerFor('application').set('currentUser', user);
+              this.controllerFor('application').set('isLoggedIn', true);
               this.transitionTo("calendar");
             }.bind(this),
             error : function(data) {
