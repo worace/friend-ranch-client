@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
     }
   },
   success: function(user) {
-    console.log("success, created user!: ", user);
+    Ember.$.cookie("authToken", user.get("token"));
     this.transitionToRoute("calendar");
   },
   error: function(response) {
