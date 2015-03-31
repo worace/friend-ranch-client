@@ -14,10 +14,6 @@ export default Ember.Route.extend({
       this.transitionTo("login");
     }
   },
-  model: function() {
-    console.log("getting model from app route");
-    return this.loginWithToken(this.authToken());
-  },
   authToken: function() {
     return Ember.$.cookie("authToken");
   },
