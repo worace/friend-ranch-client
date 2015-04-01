@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to the friend ranch, {{currentUser.name}}</h2>
+<div class="nav">
+{{#if isLoggedIn}}
+  <h4>Welcome to the friend ranch, {{currentUser.name}}</h4>
+{{else}}
+  <h4>Log In</h4>
+{{/if}}
+</div>
 
 {{outlet}}
