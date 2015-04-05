@@ -1,0 +1,6 @@
+<p>Here's your calendar, {{controllers.application.currentUser.name}}:</p>
+<h1>hi here's days</h1>
+
+{{#each day in model}}
+  <p>{{day.date}}</p>
+{{/each}}

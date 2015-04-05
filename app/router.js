@@ -13,6 +13,10 @@ Router.map(function() {
   this.route('signup', {path: '/signup'});
   this.route('calendar', {path: '/calendar'});
   this.route('user', {path: "/users/:user_id"});
+
+  this.resource('days', {path: '/calendar'}, function() {
+    //index is implicit
+  });
 });
 
 export default Router;
