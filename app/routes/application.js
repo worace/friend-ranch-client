@@ -26,7 +26,7 @@ export default Ember.Route.extend({
               this.controllerFor('application').set('currentUser', user);
               this.controllerFor('application').set('isLoggedIn', true);
             }.bind(this),
-            error : function(data) {
+            error : function() {
               this.transitionTo("login");
             }.bind(this)
     });
