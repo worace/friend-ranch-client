@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('faq', {path: '/'});
   this.route('travel', {path: '/travel'});
+  this.route('ranch', {path: '/ranch'});
   this.route('login', {path: '/login'});
   this.route('signup', {path: '/signup'});
   this.route('calendar', {path: '/calendar'});
