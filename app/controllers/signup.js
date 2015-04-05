@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
         name: this.get("name"),
         password: this.get("password"),
         password_confirmation: this.get("password_confirmation")
-      }
+      };
       var user = this.store.createRecord('user', params);
 
       user.save().then(this.success.bind(this), this.error.bind(this));
@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
     this.transitionToRoute("calendar");
   },
   error: function(response) {
-    var errors = JSON.parse(response.responseText).errors
+    var errors = JSON.parse(response.responseText).errors;
     this.set("errors", errors);
   }
 });
