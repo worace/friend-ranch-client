@@ -1,9 +1,21 @@
+<nav>
+  <div class="row">
+    <h1 class="site-header">friend ranch 2015</h1>
+    {{#if isLoggedIn}}
+      <p>Welcome to the friend ranch, {{currentUser.name}}</p>
+    {{else}}
+      <p>Log In</p>
+    {{/if}}
+    <ul>
+      <li><a href="/">faq</a></li>
+      <li><a href="/travel">how do i get there?</a></li>
+      <li><a href="/calendar">when can i come?</a></li>
+      <li><a href="/ranch">the ranch</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="nav">
-{{#if isLoggedIn}}
-  <h4>Welcome to the friend ranch, {{currentUser.name}}</h4>
-{{else}}
-  <h4>Log In</h4>
-{{/if}}
 </div>
 
 {{outlet}}

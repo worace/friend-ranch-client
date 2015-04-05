@@ -25,7 +25,6 @@ export default Ember.Route.extend({
               var user = this.store.createRecord("user", data.user);
               this.controllerFor('application').set('currentUser', user);
               this.controllerFor('application').set('isLoggedIn', true);
-              this.transitionTo("calendar");
             }.bind(this),
             error : function(data) {
               this.transitionTo("login");
